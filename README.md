@@ -1,21 +1,68 @@
-Static Website Example
-----------------------
+# Application Web avec Docker
 
-To be used with Cloud Academy labs.
+Ce projet est une application web conteneurisée utilisant Docker et Nginx.
+
+## 🚀 Guide de Démarrage Rapide
+
+### Prérequis
+- Docker installé sur votre machine
+- Git installé sur votre machine
+
+### Installation
+
+1. **Cloner le projet**
+   ```bash
+   git clone https://github.com/ComeDobe/web-app.git
+   cd web-app
+   ```
+
+2. **Construire l'image Docker**
+   ```bash
+   docker build -t webapp .
+   ```
+
+3. **Lancer le conteneur**
+   ```bash
+   docker run -d -p 80:80 --name webapp webapp
+   ```
+
+4. **Vérifier l'installation**
+   - Ouvrez votre navigateur et accédez à `http://localhost:80`
+   - Ou vérifiez le statut du conteneur avec :
+     ```bash
+     docker ps
+     ```
+
+## 🛠 Commandes Docker Essentielles
+
+### Gestion des Conteneurs
+
+- **Lancer le conteneur**
+  ```bash
+  docker start webapp
+  ```
+
+- **Arrêter le conteneur**
+  ```bash
+  docker stop webapp
+  ```
+
+- **Supprimer le conteneur**
+  ```bash
+  docker rm webapp
+  ```
 
 
-License
-----------------------
+## 📦 Structure du Projet
 
-This static website is based on the Dimension template by [HTML5 UP](https://html5up.net/)
+Le projet est structuré de la façon suivante :
 
-Creative Commons License
-All of the site templates I create for [HTML5 UP](https://html5up.net/) are licensed under the Creative Commons Attribution 3.0 License, which means you can:
- - Use them for personal stuff
- - Use them for commercial stuff
- - Change them however you like
+- `index.html` : Fichier HTML principal affichant le contenu de la page d'accueil.
+
+- `style.css` : Fichier CSS pour le style de la page.
+
+- `script.js` : Fichier JavaScript pour le comportement de la page.
+
+- `images/` : Dossier contenant les images utilisées dans la page.      
 
 
-... all for free, yo. In exchange, just give HTML5 UP credit for the design and tell your friends about it :)
-
-More info [here](https://html5up.net/license).
