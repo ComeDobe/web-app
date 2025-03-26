@@ -33,6 +33,54 @@ Ce projet est une application web conteneurisée utilisant Docker et Nginx.
      docker ps
      ```
 
+### Utilisation avec Docker Hub
+
+1. **Se connecter à Docker Hub**
+   ```bash
+   docker login
+   ```
+   Entrez vos identifiants Docker Hub quand ils sont demandés.
+
+2. **Préparer et pousser l'image vers Docker Hub**
+   ```bash
+   # Vérifier que l'image locale existe
+   docker images
+   
+   # Tagger l'image locale pour Docker Hub
+   docker tag webapp cdobe01/webapp:latest
+   
+   # Pousser l'image vers Docker Hub
+   docker push cdobe01/webapp:latest
+   ```
+
+3. **Récupérer l'image depuis Docker Hub**
+   ```bash
+   docker pull cdobe01/webapp:latest
+   ```
+
+4. **Lancer le conteneur depuis l'image Docker Hub**
+   ```bash
+   docker run -d -p 80:80 --name webapp cdobe01/webapp:latest
+   ```
+
+5. **Gérer les tags de version**
+   ```bash
+   # Tagger avec une version spécifique
+   docker tag webapp cdobe01/webapp:v1.0.0
+   
+   # Pousser la version spécifique
+   docker push cdobe01/webapp:v1.0.0
+   ```
+
+6. **Vérifier le déploiement**
+   ```bash
+   # Vérifier que l'image est bien sur Docker Hub
+   docker search cdobe01/webapp
+   
+   # Vérifier les tags disponibles
+   docker image ls | grep cdobe01/webapp
+   ```
+
 ## 🛠 Commandes Docker Essentielles
 
 ### Gestion des Conteneurs
